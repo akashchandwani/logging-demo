@@ -1,16 +1,14 @@
 package com.example.demo.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.HealthResponse;
 
-@Service
-public class DemoServiceImpl implements DemoService {
+import lombok.extern.slf4j.Slf4j;
 
-	
-	private static final Logger log = LoggerFactory.getLogger(DemoServiceImpl.class);
+@Service
+@Slf4j
+public class DemoServiceImpl implements DemoService {
 	
 	@Override
 	public HealthResponse getHealthResponse() {
@@ -19,5 +17,4 @@ public class DemoServiceImpl implements DemoService {
 		healthResponse.setStatus("UP");
 		return healthResponse;
 	}
-
 }
