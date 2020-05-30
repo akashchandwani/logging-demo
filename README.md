@@ -8,3 +8,4 @@ Features -
 2. Add username to the logs
 3. A filter to log the requests and the response
 4. A filter to add username to the requests.
+5. Add httptrace using actuators
