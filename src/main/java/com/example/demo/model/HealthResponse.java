@@ -1,16 +1,12 @@
 package com.example.demo.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class HealthResponse {
 
 	private String status;
 
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	
-	
 }

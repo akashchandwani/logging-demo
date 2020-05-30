@@ -7,24 +7,28 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.MDC;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
-@Order(1)
-public class MdcFilter implements Filter {
+@Order(2)
+public class LoggingFilter implements Filter {
 
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
 			throws IOException, ServletException {
+		HttpServletRequest request = (HttpServletRequest) servletRequest;
+		HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-		// This will add a user to the filter
-		MDC.put("username", "akashchandwani");
-
-		chain.doFilter(servletRequest, servletResponse);
-
+		log.info("{} : {}", request.getScheme(), request.getPathInfo());
+		chain.doFilter(request, response);
+		log.info("Completed : {}", response.getStatus());
 	}
 
 }
