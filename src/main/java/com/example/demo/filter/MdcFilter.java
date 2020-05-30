@@ -1,7 +1,6 @@
 package com.example.demo.filter;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -13,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
-import org.springframework.web.util.ContentCachingResponseWrapper;
-import org.springframework.web.util.WebUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
