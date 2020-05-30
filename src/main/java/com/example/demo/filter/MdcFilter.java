@@ -25,15 +25,14 @@ public class MdcFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
 			throws IOException, ServletException {
-		// This will add a user to the filter
 
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
 
+		// This will add a user to the filter
+		MDC.put("username", "akashchandwani");
 		String requestUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 				+ request.getContextPath() + request.getRequestURI() + "?" + request.getQueryString();
-
-		MDC.put("username", "akashchandwani");
 		log.info("Request  {} : {}", request.getMethod(), requestUrl);
 
 		chain.doFilter(request, response);
