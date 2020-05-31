@@ -30,6 +30,8 @@ public class MdcFilter implements Filter {
 
 		chain.doFilter(servletRequest, servletResponse);
 
+		MDC.clear();
+
 	}
 
 }
