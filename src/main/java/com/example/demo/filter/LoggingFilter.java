@@ -26,7 +26,7 @@ public class LoggingFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-		log.info("{} : {}", request.getScheme(), request.getPathInfo());
+		log.info("{} : {}", request.getMethod(), request.getRequestURI());
 		chain.doFilter(request, response);
 		log.info("Completed : {}", response.getStatus());
 	}

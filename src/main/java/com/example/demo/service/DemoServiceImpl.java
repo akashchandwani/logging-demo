@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class DemoServiceImpl implements DemoService {
-	
+
 	@Override
 	public HealthResponse getHealthResponse() {
 		log.debug("Request for Health");
