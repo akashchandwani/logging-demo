@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  logging_demo:
+    image: openjdk:8-jdk-alpine
+    # command: "sh mvnw package spring-boot:run"
+    command: "sh mvnw spring-boot:run"
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - target:/app/target
+    ports:
+      - 8080:8080
+volumes:
+  target:
