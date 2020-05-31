@@ -1,6 +1,6 @@
 # logging-demo
 
-This project is a demo project on how to setup the logs for a spring boot application.
+A demo application to log Rest calls and method invocation in a spring boot project.
 
 Features -
 
