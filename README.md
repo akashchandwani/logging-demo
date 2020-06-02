@@ -1,6 +1,6 @@
 # logging-demo
 
-A demo application to log Rest calls and method invocation in a spring boot project.
+A demo spring boot application to log Rest calls and method invocation with additional values like timezone, sessionId, userId, httpMethod, http requests uri, etc...
 
 Features -
 
